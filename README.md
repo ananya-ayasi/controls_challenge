@@ -16,16 +16,18 @@ bash ./download_dataset.sh
 pip install -r requirements.txt
 
 # test this works
-python tinyphysics.py --model_path ./models/tinyphysics.onnx --data_path ./data/00000.csv --debug --controller simple
+python3 tinyphysics.py --model_path ./models/tinyphysics.onnx --data_path ./data/00000.csv --debug --controller simple
 ```
 
 There are some other scripts to help you get aggregate metrics: 
 ```
 # batch Metrics of a controller on lots of routes
-python tinyphysics.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 100 --controller simple
+python3 tinyphysics.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 100 --controller simple
+python3 tinyphysics.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 100 --controller auto
 
 # generate a report comparing two controllers
-python eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 100 --test_controller simple --baseline_controller open
+python3 eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 100 --test_controller simple --baseline_controller open
+python3 eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 100 --test_controller auto --baseline_controller open
 
 ```
 You can also use the notebook at [`experiment.ipynb`](https://github.com/commaai/controls_challenge/blob/master/experiment.ipynb) for exploration.
@@ -49,7 +51,7 @@ It is important to minimize both costs. `total_cost`: $(lataccel\\_cost *5) + je
 ## Submission
 Run the following command, and send us a link to your fork of this repo, and the `report.html` this script generates.
 ```
-python eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 5000 --test_controller <insert your controller name> --baseline_controller simple
+python3 eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 5000 --test_controller <insert your controller name> --baseline_controller auto
 ```
 
 ## Work at comma
