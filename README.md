@@ -51,7 +51,7 @@ It is important to minimize both costs. `total_cost`: $(lataccel\\_cost *5) + je
 ## Submission
 Run the following command, and send us a link to your fork of this repo, and the `report.html` this script generates.
 ```
-python3 eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 5000 --test_controller auto --baseline_controller open
+python3 eval.py --model_path ./models/tinyphysics.onnx --data_path ./data --num_segs 5000 --test_controller auto --baseline_controller simple
 ```
 
 ## Work at comma
